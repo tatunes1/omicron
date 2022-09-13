@@ -1,11 +1,23 @@
 import express from 'express';
-const app = express();
-const port = 2909;
-
-app.get('/', (req, res) => {
-  res.send('Hello World!');
-});
-
-app.listen(port, () => {
-  return console.log(`Express is listening at http://localhost:${port}`);
-});
+import routes from './routes';
+import * as mongoose from 'mongoose';
+export class App{
+  public app: express.Application;
+  private mongoUrl = 'mongodb://localhost/';
+  constructor(){
+    this.app = express();
+    this.setupRoutes();
+    this.mongoSetup();
+  }
+  
+  private setupRoutes(){
+    this.app.use(routes);
+    this.app.get('/user', (req, res) => {
+      res.send('Hello World!');
+    });
+  }
+ 
+  private mongoSetup(): void {
+    mongoose.connect(this.mongoUrl, { dbName: 'mono_traders'});
+  }
+}
