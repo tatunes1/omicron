@@ -1,5 +1,5 @@
 
-import { App } from "./src/app";
+import { App } from "./app";
 
 const application = new App();
 const PORT = 2909;
