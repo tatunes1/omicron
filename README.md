@@ -1,0 +1,2 @@
+# omicron
+Mono traders backend
