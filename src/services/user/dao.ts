@@ -7,7 +7,7 @@ export class UserDao{
   }
 
   public static getUserByName(name: string){
-    return Users.find({ 'name.first_name': name });
+    return Users.find({ 'name.firstName': name });
   }
 
   public static async addUser(addUserReq: any){
