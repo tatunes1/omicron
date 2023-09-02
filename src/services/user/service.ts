@@ -10,7 +10,7 @@ export class UserService{
   }
 
   public async addUser(payload: any){
-    Logging.info(`addUser ${payload.first_name}`);
+    Logging.info(`addUser ${payload.firstName}`);
     const response = await UserDao.addUser(payload);
     Logging.info(`user has been added with fields ${payload}`);
   }

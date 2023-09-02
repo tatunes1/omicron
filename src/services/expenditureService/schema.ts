@@ -4,14 +4,19 @@ import { PaymentMode, Vendor } from './interfaces';
 const Schema = mongoose.Schema;
 
 const expenditureSchema = new Schema({
-  payment_mode: PaymentMode,
-  amount: Number,
+  paymentMode: { type: String, enum: PaymentMode, default: PaymentMode.CASH },
   payer: String,
-  vendor: Vendor,
-  created_at: { type: Date, default: Date.now },
-  updated_at: { type: Date, default: Date.now },
-  created_by: String,
-  updated_by: String,
+  vendor: { type: String, enum: Vendor },
+  amount: Number,
+  isGstPaid: Boolean,
+  isIgstTransaction: Boolean,
+  totalGst: Number,
+  totalAmount: Number,
+  orderDate: Date,
+  createdAt: { type: Date, default: Date.now },
+  updatedAt: { type: Date, default: Date.now },
+  createdBy: String,
+  updatedy: String,
 });
 
 
