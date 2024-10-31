@@ -1,2 +1,2 @@
 # omicron
-Mono traders backend codebase
+Mono traders backend repo
