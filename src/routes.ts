@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import expenditureRouter from './services/expenditureService/routes';
-import userRouter from './services/user/routes';
+import userRouter from './services/userService/routes';
 
 const routes = Router();
 
